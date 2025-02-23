@@ -1,0 +1,34 @@
+<section class="contact-form">
+    <h2>Envíanos un mensaje</h2>
+    <form onsubmit="mostrarMensaje(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+
+    <p id="mensaje-confirmacion" class="mensaje-oculto">Mensaje recibido. Nos pondremos en contacto contigo pronto.</p>
+</section>
+
+<style>
+    .mensaje-oculto {
+        display: none;
+        text-align: center;
+        margin-top: 15px;
+        color: #4CAF50;
+        font-weight: bold;
+    }
+</style>
+
+<script>
+    function mostrarMensaje(event) {
+        event.preventDefault(); 
+        document.getElementById("mensaje-confirmacion").style.display = "block"; 
+    }
+</script>

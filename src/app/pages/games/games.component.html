@@ -1,0 +1,12 @@
+<div class="games-container">
+  <h3 class="text-center">Lista de Juegos</h3>
+  <ul class="list-group">
+      <li class="list-group-item" *ngFor="let game of games">
+          <img [src]="game.background_image" alt="{{ game.name }}" class="game-image" />
+          <div class="game-info">
+              <h5 class="game-title">{{ game.name }}</h5>
+              <p class="game-description">Rating: {{ game.rating }}</p>
+          </div>
+      </li>
+  </ul>
+</div>
