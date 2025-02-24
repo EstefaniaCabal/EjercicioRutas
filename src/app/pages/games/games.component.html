@@ -1,12 +1,16 @@
 <div class="games-container">
-  <h3 class="text-center">Lista de Juegos</h3>
-  <ul class="list-group">
-      <li class="list-group-item" *ngFor="let game of games">
-          <img [src]="game.background_image" alt="{{ game.name }}" class="game-image" />
-          <div class="game-info">
-              <h5 class="game-title">{{ game.name }}</h5>
+    <h3 class="text-center">Lista de juegos</h3>
+    <div class="grid-container">
+      @for (game of games; track game.id){
+        <div class="container mt-5">
+          <div class="card bg-black text-light mx-auto" style="width: 18rem; border-radius: 5%">
+            <img [src]="game.background_image" alt="{{ game.name }}" class="card-img-top" style="height: 10rem; border-radius: 5%" />
+            <div class="card-body">
+              <h5 class="card-title">{{ game.name }}</h5>
               <p class="game-description">Rating: {{ game.rating }}</p>
+            </div>
           </div>
-      </li>
-  </ul>
-</div>
+        </div>
+      }
+    </div>
+  </div>

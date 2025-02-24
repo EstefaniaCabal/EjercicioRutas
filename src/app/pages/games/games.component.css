@@ -107,3 +107,36 @@
       font-size: 1rem;
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
+  gap: 10px;
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* 📱 Para pantallas medianas (tabletas) → 2 columnas */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 📲 Para pantallas pequeñas (móviles) → 1 columna */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
